@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class AuthController{
+class VisitasController{
 
     
 
