@@ -1,4 +1,4 @@
-<?php include_once "../layouts/header.php"; ?>
+<?php include_once "./public/views/layouts/header.php"; ?>
 
         <div class="row">
         <div class="text-center mb-3">
@@ -11,9 +11,11 @@
                     <div class="card-body bg-light-subtle">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
+                                <a href="/app-pasantias/mencion-create">
                                 <button type="button" class="btn btn-success btn-sm align-middle">
                                 <i class="fa-solid fa-plus"></i> Nuevo
                                 </button>
+                                </a>
                             </div>
                             <div>
                                 <div class="input-group">
@@ -40,45 +42,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Telematica</td>
-                            <td >Redes</td>
-                            <td class="text-center">Habilitado</td>
-                            <td class="text-center">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-info btn-sm">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm">
-                                <i class="fa-solid fa-xmark"></i>
-                                </button>
-                            </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Laboratorio Clinico</td>
-                            <td>La Salud</td>
-                            <td class="text-center">Deshabilitado</td>
-                            <td class="text-center">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-info btn-sm">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm">
-                                <i class="fa-solid fa-xmark"></i>
-                            </div>
-                            </td>
-                        </tr>
+                    <?php 
+                    if(empty($data)){
+                        echo '<tr align="center"><td colspan="4">sin registros</td></tr>';
+                    }else{
+                        foreach($data as $d){ ?>
+                            <tr>
+                                <td><?php echo $d['nombre']; ?></td>
+                                <td ><?php echo $d['area']; ?></td>
+                                <td class="text-center"><?php if($d['estado']==1){ echo "Habilitado"; }else{ echo "Deshabilitado"; } ?></td>
+                                <td class="text-center">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <a href="#">
+                                    <button type="button" class="btn btn-info btn-sm">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                    </a>
+                                    <a href="#">
+                                    <button type="button" class="btn btn-warning btn-sm">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    </a>
+                                    <a href="/app-pasantias/mencion-delete/<?php echo $d['id_mencion']; ?>">
+                                    <button type="button" class="btn btn-danger btn-sm">
+                                    <i class="fa-solid fa-xmark"></i>
+                                    </button>
+                                    </a>
+                                </div>
+                                </td>
+                            </tr>
+                        <?php } } ?>
                     </tbody>
                 </table>
             </div>
         </div>
         
 
-<?php include_once "../layouts/footer.php"; ?>
+<?php include_once "./public/views/layouts/footer.php"; ?>

@@ -1,8 +1,9 @@
 <?php include_once "../layouts/header.php"; ?>
 
+    <form action="create.php" method="post">
             <div class="row ">
                 <div class="col-12 text-center mb-3">
-                    <h1>Registrar Estudiante</h1>
+                    <h1 class="text-primary-emphasis">Registrar Estudiante</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -29,7 +30,7 @@
                     </div>
                 </div>
                 <div class="col-5">
-                    <div class="content-center">
+                    <div class="text-center">
                         <img width="380"  height="380" src="../../assets/images/Estudiantes.jpg" alt="">
                     </div>
                 </div>
@@ -91,7 +92,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-3 ">
                     <hr class="center mb-3">
-                    <h1>Perfil Ocupacional</h1>
+                    <h1 class="text-primary-emphasis">Perfil Ocupacional</h1>
                 </div>
             </div>
             <div class="row">
@@ -108,12 +109,17 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary btn-lock">Regresar</button>
-                    <button type="button" class="btn btn-success btn-lock">Registrar</button>
-                    <button type="button" class="btn btn-warning btn-lock">Limpiar</button>
+            <div class="row text-center">
+            <div class="col-3">
+                    <a href="index.php"><button type="button" class="btn btn-primary btn-lock">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    </button></a>
+                </div>
+                <div class="col-6">
+                    <button type="submit" class="btn btn-success btn-lock">Registrar</button>
+                    <button type="reset" value="limpiar" class="btn btn-warning btn-lock">Limpiar</button>
                 </div>
             </div>
+    </form>
 
 <?php include_once "../layouts/footer.php"; ?>

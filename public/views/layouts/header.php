@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>App-Pasantias</title>
-        <link rel="stylesheet" href="http://localhost/public/assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="http://localhost/public/assets/css/all.min.css">
+        <link rel="stylesheet" href="<?php echo $_ENV['APP_URL'].$_ENV['BASE_PATH'].$_ENV['APP_PUBLIC']; ?>/assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="<?php echo $_ENV['APP_URL'].$_ENV['BASE_PATH'].$_ENV['APP_PUBLIC']; ?>/assets/css/all.min.css">
 
     </head>
     <body>

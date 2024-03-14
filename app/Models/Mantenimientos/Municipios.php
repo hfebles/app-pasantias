@@ -16,7 +16,7 @@ class Municipios{
 
     public function getMunicipios(){
 
-        $sql = "SELECT id_municipio, nombre FROM municipios;";
+        $sql = "SELECT id_municipio, nombre_municipio FROM municipios;";
 
         $result = $this->conn->consultar($sql);
 
@@ -26,7 +26,7 @@ class Municipios{
 
     public function getParroquias(int $id){
 
-        $sql = "SELECT nombre, id_parroquia FROM parroquias WHERE id_municipio = ".$id;
+        $sql = "SELECT nombre_parroquia, id_parroquia FROM parroquias WHERE id_municipio = ".$id;
 
         return $this->conn->consultar($sql);
     }

@@ -1,8 +1,8 @@
-<?php include_once "../layouts/header.php"; ?>
+<?php include_once "./public/views/layouts/header.php"; ?>
 
         <div class="row">
         <div class="text-center mb-3">
-                <h1>Listado de Estudiantes</h1>
+                <h1 class="text-primary-emphasis">Listado de Estudiantes</h1>
             </div>
         </div>
         <div class="row justify-content-center mb-3">
@@ -11,9 +11,9 @@
                     <div class="card-body bg-light-subtle">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <button type="button" class="btn btn-success btn-sm align-middle">
-                                <i class="fa-solid fa-plus"></i> Nuevo
-                                </button>
+                                <a href="create.php"><button type="button" class="btn btn-success btn-sm align-middle">
+                                <i class="fa-solid fa-user-plus"></i>    Nuevo
+                                </button></a>
                             </div>
                             <div>
                                 <div class="input-group">
@@ -48,12 +48,12 @@
                             <td class="text-center">Telematica</td>
                             <td class="text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-info btn-sm">
+                                <a href="show.php"><button type="button" class="btn btn-info btn-sm">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm">
+                                </button></a>
+                                <a href="edit.php"><button type="button" class="btn btn-warning btn-sm">
                                 <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
+                                </button></a>
                             </div>
                             </td>
                         </tr>
@@ -64,12 +64,12 @@
                             <td class="text-center">Laboratorio Clinico</td>
                             <td class="text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-info btn-sm">
+                                <a href="show.php"><button type="button" class="btn btn-info btn-sm">
                                 <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
-                                <button type="button" class="btn btn-warning btn-sm">
+                                </button></a>
+                                <a href="edit.php"><button type="button" class="btn btn-warning btn-sm">
                                 <i class="fa-regular fa-pen-to-square"></i>
-                                </button>
+                                </button></a>
                             </div>
                             </td>
                         </tr>
@@ -79,4 +79,4 @@
         </div>
         
 
-<?php include_once "../layouts/footer.php"; ?>
+<?php include_once "./public/views/layouts/footer.php"; ?>

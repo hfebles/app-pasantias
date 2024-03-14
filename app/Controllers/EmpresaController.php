@@ -6,10 +6,6 @@ use App\Models\Empresa;
 
 use App\Controllers\Mantenimientos\MunicipiosController;
 
-use App\Controllers\Mantenimientos\AuditoriaController;
-
-use App\Models\Mantenimientos\Auditoria;
-
 class EmpresaController{
 
     private $empresa;
@@ -20,17 +16,15 @@ class EmpresaController{
 
         $this->empresa = new Empresa;
 
-        $this->auditoria = new Auditoria;
-
     }
 
     public function index(){
 
-        // $data = $this->empresa->index();
+        $data = $this->empresa->index();
 
-        // require_once("app/views/empresas/index.php");
+        require_once("public/views/empresas/index.php");
 
-        $this->auditoria->store_auditoria([1, "hola"]);
+        // $this->auditoria->store_auditoria([1, "hola"]);
     }
 
     public function create(){

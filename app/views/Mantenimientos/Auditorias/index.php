@@ -10,10 +10,11 @@
 
 <table border="2" width="100%">
     <tr>
-        <th>nombre</th>
-        <th>ubicacion</th>
-        <th>telefono</th>
-        <th>promedio</th>
+        <th>#</th>
+        <th>Usuario</th>
+        <th>Fecha</th>
+        <th>Hora</th>
+        <th>Accion</th>
     </tr>
     <?php 
     if(empty($data)){
@@ -21,10 +22,11 @@
     }else{
     foreach($data as $d){ ?>
         <tr>
-        <td><?php echo $d['nombre']; ?></td>
-        <td><?php echo $d['ubicacion']; ?></td>
-        <td><?php echo $d['telefono']; ?></td>
-        <td><?php echo $d['correo']; ?></td>
+        <td><?php echo $d['id_auditoria']; ?></td>
+        <td><?php echo $d['usuario']; ?></td>
+        <td><?php echo date('d-m-Y', strtotime($d['fecha_accion'])); ?></td>
+        <td><?php echo /*date('h:i:s A', strtotime(*/$d['hora_accion']/*))*/; ?></td>
+        <td><?php echo $d['accion']; ?></td>
     </tr>
     <?php }} ?>
 </table>

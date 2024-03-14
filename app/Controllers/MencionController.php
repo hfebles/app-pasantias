@@ -3,45 +3,44 @@
 namespace App\Controllers;
 
 use App\Models\Mencion;
+use App\Models\Mantenimientos\Conocimientos;
+use App\Models\Mantenimientos\Habilidades;
 
 class MencionController{
 
+    private $mencion;
+
+    public function __construct(){
+        $this->mencion = new Mencion();
+    }
+
     public function index(){
+        $data = $this->mencion->getAllData();
+        require_once("public/views/mencion/index.php");
+    }
 
-        $menciones = new Mencion();
-
-        $data = $menciones->getAllData();
-
-        // var_dump($menciones);
-
-        require_once("app/views/menciones/index.php");
-
+    public static function getMenciones(){
+        $mencion = new Mencion();
+        $data = $mencion->getMenciones();
+        return $data;
     }
 
     public function create(){
-
-        require_once("app/views/menciones/create.php");
-
+        $cono = new Conocimientos();
+        $habi = new Habilidades();
+        $conocimientos = $cono->index();
+        $habilidades = $habi->index();
+        require_once("public/views/mencion/create.php");
     }
 
     public function store($request){
-
-        $mencion = new Mencion();
-
-        $mencion->store($request);
-
+        $this->mencion->store($request);
         header("Location: ".$_ENV['BASE_PATH']."/mencion");
-
     }
 
     public function delete(int $id){
-
-        $mencion = new Mencion();
-
-        $mencion->delete($id);
-
+        $this->mencion->delete($id);
         header("Location: ".$_ENV['BASE_PATH']."/mencion");
-
     }
 
 }

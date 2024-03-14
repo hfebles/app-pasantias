@@ -39,7 +39,7 @@
     <select name="id_municipio" required onchange="selectParroquia(this.value);">
         <option>- Seleccione -</option>
         <?php foreach($municipios as $municipio){ ?>
-        <option value="<?php echo $municipio['id_municipio']; ?>"><?php echo $municipio['nombre']; ?></option>
+        <option value="<?php echo $municipio['id_municipio']; ?>"><?php echo $municipio['nombre_municipio']; ?></option>
         <?php } ?>
     </select>
 
@@ -72,7 +72,7 @@
                 selectParroquias.innerHTML = ''
                 var option = ''
                 for(let i in data){
-                    option += `<option value="${data[i].id_parroquia}">${data[i].nombre}</option>`
+                    option += `<option value="${data[i].id_parroquia}">${data[i].nombre_parroquia}</option>`
                     // console.log(data[i].nombre)
                 }
                 selectParroquias.innerHTML = option

@@ -14,7 +14,14 @@ class BaseModels{
 
     }
 
-    
+    public function validateData($tabla, $campo, $valor, $tipo = ""){
+        if($tipo == "int"){
+            $sql="SELECT $campo FROM $tabla WHERE $campo=$valor;";
+        }else{
+            $sql="SELECT $campo FROM $tabla WHERE $campo='$valor';";
+        }
+        return $this->conn->consultar($sql);
+    }
 
 }
 

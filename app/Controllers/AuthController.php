@@ -34,7 +34,7 @@ class AuthController{
                 $_SESSION["id_usuario"] = $valor['id_usuario'];
             }
             $this->auditoria->store_auditoria([$_SESSION["id_usuario"], "Inicio Sesion"]);
-            header("location: /app-pasantias/dashboard");
+            header("location: /app-pasantias/home");
 
         } else {
             return false;

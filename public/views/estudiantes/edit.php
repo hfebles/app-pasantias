@@ -1,8 +1,9 @@
 <?php include_once "../layouts/header.php"; ?>
 
+    <form action="edit.php" method="post">
             <div class="row ">
                 <div class="col-12 text-center mb-3">
-                    <h1>Actualizar Estudiante</h1>
+                    <h1 class="text-primary-emphasis">Actualizar Estudiante</h1>
                 </div>
             </div>
             <div class="row justify-content-center">
@@ -19,18 +20,34 @@
                         <label> Segundo Nombre: </label>
                         <input type="text" class="form-control bg-body-secondary mb-3 " name="segundonombre" required>
                     </div>
+                </div>
+                <div class="col-5">
+                    <div class="text-center">
+                        <img width="230"  height="230" src="../../assets/images/estuante-actua.png" alt="">
+                    </div>
+                </div>
+                <div class="col-5">
                     <div>
                         <label> Primer Apellido: </label>
                         <input type="text" class="form-control bg-body-secondary mb-3 " name="primerapellido" required>
                     </div>
+                </div>
+                <div class="col-5">
+                    <div>
+                        <label>Correo Electrónico: </label>
+                        <input type="text" class="form-control bg-body-secondary mb-3" name="correo" required>
+                    </div>
+                </div>
+                <div class="col-5">
                     <div>
                         <label> Segundo Apellido: </label>
                         <input type="text" class="form-control bg-body-secondary mb-3 " name="segundoapellido" required>
                     </div>
                 </div>
                 <div class="col-5">
-                    <div class="content-center">
-                        <img width="380"  height="380" src="../../assets/images/Estudiantes.jpg" alt="">
+                    <div>
+                        <label>Ingrese Curriculum: </label>
+                        <input type="file" class="form-control  bg-body-secondary mb-3" name="curriculum" required>
                     </div>
                 </div>
                 <div class="col-5">
@@ -43,26 +60,14 @@
                 </div>
                 <div class="col-5">
                     <div>
-                        <label>Ingrese Curriculum: </label>
-                        <input type="file" class="form-control  bg-body-secondary mb-3" name="curriculum" required>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div>
-                        <label>Fecha de Nacimiento: </label>
-                        <input type="date" class="form-control  bg-body-secondary mb-3" name="fecha" required>  
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div>
                         <label>Ubicación: </label>
                         <input type="text" class="form-control  bg-body-secondary mb-3" name="ubicacion" required>
                     </div>
                 </div>
                 <div class="col-5">
                     <div>
-                        <label>Teléfono: </label>
-                        <input type="text" pattern="|^\d{7}$|" class="form-control bg-body-secondary mb-3" name="telefono" required>
+                        <label>Fecha de Nacimiento: </label>
+                        <input type="date" class="form-control  bg-body-secondary mb-3" name="fecha" required>  
                     </div>
                 </div>
                 <div class="col-5">
@@ -75,8 +80,8 @@
                 </div>
                 <div class="col-5">
                     <div>
-                        <label>Correo Electrónico: </label>
-                        <input type="text" class="form-control bg-body-secondary mb-3" name="correo" required>
+                        <label>Teléfono: </label>
+                        <input type="text" pattern="|^\d{7}$|" class="form-control bg-body-secondary mb-3" name="telefono" required>
                     </div>
                 </div>
                 <div class="col-5">
@@ -91,7 +96,7 @@
             <div class="row">
                 <div class="col-12 text-center mb-3 ">
                     <hr class="center mb-3">
-                    <h1>Perfil Ocupacional</h1>
+                    <h1 class="text-primary-emphasis" >Perfil Ocupacional</h1>
                 </div>
             </div>
             <div class="row">
@@ -108,12 +113,17 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="text-center">
-                    <button type="button" class="btn btn-primary btn-lock">Regresar</button>
-                    <button type="button" class="btn btn-success btn-lock">Actualizar</button>
-                    <button type="button" class="btn btn-warning btn-lock">Limpiar</button>
+            <div class="row text-center">
+                <div class="col-2">
+                    <a href="index.php"><button type="button" class="btn btn-primary btn-lock">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    </button></a>
+                </div>
+                <div class="col-7">
+                    <button type="submit" class="btn btn-success btn-lock">Actualizar</button>
+                    <button type="reset" class="btn btn-warning btn-lock">Limpiar</button>
                 </div>
             </div>
+    </form>
 
 <?php include_once "../layouts/footer.php"; ?>

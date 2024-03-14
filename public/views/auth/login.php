@@ -1,4 +1,4 @@
-<?php include_once "../layouts/header.php"; ?>
+<?php include_once "./public/views/layouts/header.php"; ?>
 
         <div class="row justify-content-center g-2">
             <div class="col-6">
@@ -7,17 +7,17 @@
                         Iniciar Sesión
                     </div>
                     <div class="card-body">
-                        <form action="" method=""> 
+                        <form action="/app-pasantias/login" method="post"> 
                             <div class="mb-3">
                                 <span>Usuario: </span>
-                                <input type="text" class="form-control">
+                                <input type="text" name="user" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <span>Contraseña: </span>
-                                <input type="password"  class="form-control" >
+                                <input type="password" name="password" class="form-control" >
                             </div>
                             <div class="text-center ">
-                                <button type="button" class="btn btn-success btn-lock">Enviar</button>
+                                <button type="submit" class="btn btn-success btn-lock">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -26,4 +26,4 @@
         </div>
     
 
-<?php include_once "../layouts/footer.php"; ?>
+<?php include_once "./public/views/layouts/footer.php"; ?>
