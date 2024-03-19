@@ -16,7 +16,7 @@
     <select name="nivel" id="nivel">
         <option value="0">- Seleccione -</option>
         <option value="1">Administrador</option>
-        <option value="2">Coor. Pasantias</option>
+        <option value="2">Coordinador Pasantias</option>
         <option value="3">Coor. Media Tecnica</option>
         <option value="4">Secretaria</option>
     </select>

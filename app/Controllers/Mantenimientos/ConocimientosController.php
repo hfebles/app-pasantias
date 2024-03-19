@@ -17,6 +17,13 @@ class ConocimientosController{
         require_once("app/views/Mantenimientos/conocimientos/index.php");
     }
 
+    public function getConocimientos(int $id){
+        $data = $this->conocimientos->getConocimientos($id);
+        $dataJSON = json_encode($data);
+        //header('Content-Type: application/json');
+        echo $dataJSON;
+    }
+
     public function create(){
         require_once("app/views/Mantenimientos/conocimientos/create.php");
     }

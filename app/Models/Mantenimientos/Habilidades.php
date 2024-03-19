@@ -18,6 +18,20 @@ class Habilidades{
         return $result;
     }
 
+    public function getHabilidades(int $id){
+        $sql = "SELECT habilidades FROM menciones WHERE estado=1 AND id_mencion=".$id;
+        $habilidadesJSON = $this->conn->consultar($sql);
+        $habilidades = json_decode($habilidadesJSON[0]['habilidades']);
+        $habilidadesMencion = [];
+        foreach($habilidades as $valor){
+            $sql = "SELECT id_habilidad, nombre_habilidad FROM habilidades WHERE estado=1 AND id_habilidad=".$valor;
+            $result = $this->conn->consultar($sql);
+            array_push($habilidadesMencion, $result[0]);
+        }
+        $habilidadesMencionJSON = json_encode($habilidadesMencion);
+        return $habilidadesMencionJSON;
+    }
+
     public function store(array $data){
         if(!empty($data)){
             foreach($data['habilidades'] as $i=>$habilidad){

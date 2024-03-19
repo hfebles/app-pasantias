@@ -2,7 +2,7 @@
 
         <div class="row">
         <div class="text-center mb-3">
-                <h1>Listado de Menciones</h1>
+                <h1 class="text-primary-emphasis">Listado de Menciones</h1>
             </div>
         </div>
         <div class="row justify-content-center mb-3">

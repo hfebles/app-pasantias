@@ -1,65 +1,41 @@
 <?php
 
 namespace App\Controllers;
-
 use App\Models\Tutor;
-
 use App\Controllers\Mantenimientos\MunicipiosController;
 
 class TutorController{
 
+    private $tutores;
+
+    public function __construct(){
+        $this->tutores = new Tutor();
+    }
+
     public function index(){
-
-        $tutores = new Tutor();
-
-        $data = $tutores->index();
-
-        require_once("app/views/tutores/index.php");
-
+        $data = $this->tutores->index();
+        require_once("public/views/tutor/index.php");
     }
 
     public static function getTutores(){
-
         $tutores = new Tutor();
-
         $result = $tutores->getTutores(2);
-
         return $result;
-
     }
 
     public function create(){
-
         $municipios = MunicipiosController::getMunicipios();
-
-        // $parroquia = (new MunicipiosController())->getParroquias(1);
-
-        // var_dump($parroquia);
-
-        // die();
-
-        require_once("app/views/tutores/create.php");
-
+        require_once("public/views/tutor/create.php");
     }
 
     public function store($request){
-
-        $tutores = new Tutor();
-
-        $tutores->store($request);
-
+        $bool = $this->tutores->store($request);
         header("Location: ".$_ENV['BASE_PATH']."/tutor");
-
     }
 
     public function delete(int $id){
-
-        $tutores = new Tutor();
-
-        $tutores->delete($id);
-
+        $this->tutores->delete($id);
         header("Location: ".$_ENV['BASE_PATH']."/tutor");
-
     }
 
 }

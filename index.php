@@ -21,6 +21,7 @@ if ((isset($_SESSION['nombre_usuario']) && $route === '/login') || (isset($_SESS
     exit;
 }
 //rutas
+
 if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
     $id = intval(substr($route, strlen('/mencion-show/')));
     // (new MencionPrincipalController())->show($id);
@@ -36,6 +37,9 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
 } elseif ($request_method === 'GET' && strpos($route, '/tutor-delete/') === 0) {
     $id = intval(substr($route, strlen('/tutor-delete/')));
     (new TutorController())->delete($id);
+} elseif ($request_method === 'GET' && strpos($route, '/estudiante-show/') === 0) {
+    $id = intval(substr($route, strlen('/estudiante-show/')));
+    (new EstudianteController())->show($id);
 } elseif ($request_method === 'GET' && strpos($route, '/estudiante-delete/') === 0) {
     $id = intval(substr($route, strlen('/estudiante-delete/')));
     (new EstudianteController())->delete($id);
@@ -45,6 +49,12 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
 } elseif ($request_method === 'GET' && strpos($route, '/parroquia-get/') === 0) {
     $id = intval(substr($route, strlen('/parroquia-get/')));
     (new MunicipiosController())->getParroquias($id);
+} elseif ($request_method === 'GET' && strpos($route, '/conocimientos-get/') === 0) {
+    $id = intval(substr($route, strlen('/conocimientos-get/')));
+    (new ConocimientosController())->getConocimientos($id);
+} elseif ($request_method === 'GET' && strpos($route, '/habilidades-get/') === 0) {
+    $id = intval(substr($route, strlen('/habilidades-get/')));
+    (new HabilidadesController())->getHabilidades($id);
 } elseif ($request_method === 'GET' && strpos($route, '/usuario-delete/') === 0) {
     $id = intval(substr($route, strlen('/usuario-delete/')));
     (new UsuariosController())->delete($id);

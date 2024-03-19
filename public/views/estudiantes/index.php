@@ -11,7 +11,7 @@
                     <div class="card-body bg-light-subtle">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <a href="create.php"><button type="button" class="btn btn-success btn-sm align-middle">
+                                <a href="/app-pasantias/estudiante-create"><button type="button" class="btn btn-success btn-sm align-middle">
                                 <i class="fa-solid fa-user-plus"></i>    Nuevo
                                 </button></a>
                             </div>
@@ -41,38 +41,28 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php 
+                    if(empty($data)){
+                        echo '<tr align="center"><td colspan="5">sin registros</td></tr>';
+                    }else{
+                    foreach($data as $i=>$estudiante){ ?>
                         <tr>
-                            <td class="text-center">1</td>
-                            <td>Angela Lucia Soto Baloa</td>
-                            <td class="text-center">30137095</td>
-                            <td class="text-center">Telematica</td>
+                            <td class="text-center"><?php echo ($i+1); ?></td>
+                            <td><?php echo $estudiante['nombres']." ".$estudiante['apellidos']; ?></td>
+                            <td class="text-center"><?php echo $estudiante['cedula']; ?></td>
+                            <td class="text-center"><?php echo $estudiante['nombre']; ?></td>
                             <td class="text-center">
                             <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="show.php"><button type="button" class="btn btn-info btn-sm">
+                                <a href="#"><button type="button" class="btn btn-info btn-sm">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                                 </button></a>
-                                <a href="edit.php"><button type="button" class="btn btn-warning btn-sm">
+                                <a href="#"><button type="button" class="btn btn-warning btn-sm">
                                 <i class="fa-regular fa-pen-to-square"></i>
                                 </button></a>
                             </div>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="text-center">2</td>
-                            <td>Gabriel Enrique Hernadez Lopez</td>
-                            <td class="text-center">31069991</td>
-                            <td class="text-center">Laboratorio Clinico</td>
-                            <td class="text-center">
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="show.php"><button type="button" class="btn btn-info btn-sm">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                                </button></a>
-                                <a href="edit.php"><button type="button" class="btn btn-warning btn-sm">
-                                <i class="fa-regular fa-pen-to-square"></i>
-                                </button></a>
-                            </div>
-                            </td>
-                        </tr>
+                    <?php }} ?>
                     </tbody>
                 </table>
             </div>

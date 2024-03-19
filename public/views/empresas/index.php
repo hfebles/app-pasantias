@@ -2,7 +2,7 @@
 
         <div class="row">
         <div class="text-center mb-3">
-                <h1>Listado de Empresas</h1>
+                <h1 class="text-primary-emphasis">Listado de Empresas</h1>
             </div>
         </div>
         <div class="row justify-content-center mb-3">
@@ -11,9 +11,11 @@
                     <div class="card-body bg-light-subtle">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
+                                <a href="/app-pasantias/empresa-create">
                                 <button type="button" class="btn btn-success btn-sm align-middle">
                                 <i class="fa-solid fa-plus"></i> Nuevo
                                 </button>
+                                </a>
                             </div>
                             <div>
                                 <div class="input-group">
@@ -52,15 +54,21 @@
                                         <td class="text-center"><?php if($d['estado']==1){echo "Habilitada";}else{echo "Deshabilitada";} ?></td>
                                         <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Basic example">
+                                            <a href="#">
                                             <button type="button" class="btn btn-info btn-sm">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
+                                            </a>
+                                            <a href="#">
                                             <button type="button" class="btn btn-warning btn-sm">
                                             <i class="fa-regular fa-pen-to-square"></i>
                                             </button>
+                                            </a>
+                                            <a href="/app-pasantias/empresa-delete/<?php echo $d['id_empresa']; ?>">
                                             <button type="button" class="btn btn-danger btn-sm">
                                             <i class="fa-solid fa-xmark"></i>
                                             </button>
+                                            </a>
                                         </div>
                                         </td>
                                     </tr>

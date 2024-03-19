@@ -9,17 +9,12 @@ class AuditoriaController{
     private $auditoria;
 
     public function __construct(){
-
         $this->auditoria = new Auditoria();
-
     }
 
     public function index(){
-
        $data = $this->auditoria->index();
-
-       require_once("app/views/Mantenimientos/Auditorias/index.php");
-
+       require_once("public/views/mantenimientos/auditorias/index.php");
     }
 
 }

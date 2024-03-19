@@ -1,0 +1,23 @@
+.navbar{
+    padding: 5px 0 0 0;
+}
+
+.navbar .navbar-nav .nav-link{
+    padding: 15px;
+}
+
+.nav-pills .nav-link{
+    border-radius: 0px;
+    border-top-right-radius: var(--bs-nav-pills-border-radius);
+    border-top-left-radius: var(--bs-nav-pills-border-radius);
+}
+
+.dropdown:hover > .dropdown-menu{
+ display: block;
+ margin-top: 0;
+}
+
+.navbar .navbar-nav .nav-link:hover{
+    background-color: #ffff;
+    color:black;
+}

@@ -18,7 +18,7 @@
                     </div>
                     <div>
                         <label> Horas Cumplidas: </label>
-                        <input type="time" class="form-control bg-body-secondary mb-3 " name="horas" required>
+                        <input type="int" class="form-control bg-body-secondary mb-3 " name="horas" required>
                     </div>
                 </div>
                 <div class="col-4">

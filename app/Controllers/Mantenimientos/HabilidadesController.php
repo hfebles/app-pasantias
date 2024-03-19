@@ -17,6 +17,13 @@ class HabilidadesController{
         require_once("app/views/Mantenimientos/habilidades/index.php");
     }
 
+    public function getHabilidades(int $id){
+        $data = $this->habilidades->getHabilidades($id);
+        $dataJSON = json_encode($data);
+        header('Content-Type: application/json');
+        echo $dataJSON;
+    }
+
     public function create(){
         require_once("app/views/Mantenimientos/habilidades/create.php");
     }

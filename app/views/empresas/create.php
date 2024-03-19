@@ -27,7 +27,7 @@
     <input type="text" name="habilidades" required>
 
     <label for="">Seleccione un tutor empresarial:</label>
-    <select name="id_tutor" required>
+    <select name="id_tutor" class="form-select bg-body-secondary mb-3" required>
         <option>- Seleccione -</option>
         <?php foreach($tutores as $tutor){ ?>
         <option value="<?php echo $tutor['id_tutor']; ?>"><?php echo $tutor['nombre']; ?></option>
@@ -35,7 +35,7 @@
     </select>
 
     <label for="">Seleccione un municipio:</label>
-    <select name="id_municipio" required onchange="selectParroquia(this.value);">
+    <select name="id_municipio" class="form-select bg-body-secondary mb-3" onchange="selectParroquia(this.value);" required>
         <option>- Seleccione -</option>
         <?php foreach($municipios as $municipio){ ?>
         <option value="<?php echo $municipio['id_municipio']; ?>"><?php echo $municipio['nombre_municipio']; ?></option>
@@ -43,7 +43,7 @@
     </select>
 
     <label for="">Seleccione una parroquia:</label>
-    <select name="id_parroquias" required id="select-parroquias">
+    <select name="id_parroquias" class="form-select bg-body-secondary mb-3" id="select-parroquias" required>
         <option>- Seleccione -</option>
     </select>
 

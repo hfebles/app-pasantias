@@ -29,7 +29,7 @@
     <input type="email" name="correo" required>
 
     <label for="">Seleccione un tipo de tutor</label>
-    <select name="tipo" name="tipo" required>
+    <select name="tipo" required>
         <option>- Seleccione -</option>
         <option value="1">Academico</option>
         <option value="2">Empresarial</option>

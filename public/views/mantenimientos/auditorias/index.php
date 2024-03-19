@@ -1,4 +1,4 @@
-<?php include_once "../../layouts/header.php"; ?>
+<?php include_once "./public/views/layouts/header.php"; ?>
 
         <div class="row">
         <div class="text-center mb-3">
@@ -38,24 +38,23 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center">1</td>
-                            <td class="text-center">admin</td>
-                            <td class="text-center">09-03-2024</td>
-                            <td class="text-center">21:03:59</td>
-                            <td>Inicio Sesion</td>
-                        </tr>
-                        <tr>
-                            <td class="text-center">2</td>
-                            <td class="text-center">admin</td>
-                            <td class="text-center">09-03-2024</td>
-                            <td class="text-center">22:03:59</td>
-                            <td>Cierre Sesion</td>
-                        </tr>
+                        <?php 
+                        if(empty($data)){
+                            echo '<tr align="center"><td colspan="5">sin registros</td></tr>';
+                        }else{
+                        foreach($data as $d){ ?>
+                            <tr>
+                                <td class="text-center"><?php echo $d['id_auditoria']; ?></td>
+                                <td class="text-center"><?php echo $d['usuario']; ?></td>
+                                <td class="text-center"><?php echo date('d-m-Y', strtotime($d['fecha_accion'])); ?></td>
+                                <td class="text-center"><?php echo date('h:i:s A', strtotime($d['hora_accion'])) ?></td>
+                                <td><?php echo $d['accion']; ?></td>
+                            </tr>
+                            <?php }} ?>
                     </tbody>
                 </table>
             </div>
         </div>
         
 
-<?php include_once "../../layouts/footer.php"; ?>
+<?php include_once "./public/views/layouts/footer.php"; ?>

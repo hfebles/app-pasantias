@@ -16,7 +16,7 @@
     <input type="text" name="apellido2" required>
 
     <label for="">telefono:</label>
-    <input type="tel" name="telefono" pattern="[0-9]{4}[0-9]{7}" title="Un número de teléfono válido debe tener 4 dígitos, un guión (-) y 7 dígitos más" required>
+    <input type="tel" name="telefono" pattern="[0-9]{11}" title="Un número de teléfono válido debe tener 4 dígitos, un guión (-) y 7 dígitos más" required>
 
     <label for="">correo:</label>
     <input type="email" name="correo" required>
@@ -50,7 +50,7 @@
     <input type="date" name="periodo" required>
 
     <label for="">Seleccione un municipio:</label>
-    <select name="id_municipio" required onchange="selectParroquia(this.value);">
+    <select name="id_municipio" id="id_municipio" onchange="selectParroquia(this.value);" required>
         <option>- Seleccione -</option>
         <?php foreach($municipios as $municipio){ ?>
         <option value="<?php echo $municipio['id_municipio']; ?>"><?php echo $municipio['nombre_municipio']; ?></option>
@@ -58,12 +58,12 @@
     </select>
 
     <label for="">Seleccione una parroquia:</label>
-    <select name="id_parroquias" required id="select-parroquias">
+    <select name="id_parroquias" id="select-parroquias" required>
         <option>- Seleccione -</option>
     </select>
 
     <label for="">Seleccione una mencion:</label>
-    <select name="id_mencion" required>
+    <select name="id_mencion" onchange="selectParroquia(this.value);" required>
         <option>- Seleccione -</option>
         <?php foreach($menciones as $mencion){ ?>
         <option value="<?php echo $mencion['id_mencion']; ?>"><?php echo $mencion['nombre']; ?></option>
@@ -80,11 +80,8 @@
 <script>
 
         function selectParroquia(id_municipio){
-
             console.log(id_municipio);
-
             var selectParroquias = document.getElementById('select-parroquias');
-
             fetch(`/app-pasantias/parroquia-get/${id_municipio}`, {
                 method: 'GET',
                 headers: {
@@ -102,6 +99,14 @@
                 }
                 selectParroquias.innerHTML = option
             });
+        }
+
+        function selectConoHabi(id_mencion){
+            console.log(id_mencion);
+            var conocimientos = document.getElementById('select-parroquias');
+            var habilidades = document.getElementById
+
+
         }
 
 </script>
