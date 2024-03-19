@@ -2,3 +2,5 @@ node_modules/
 vendors
 .env
 /vendor/
+*.lock
+/app/databases/backup/
