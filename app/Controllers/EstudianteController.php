@@ -11,12 +11,13 @@ class EstudianteController{
 
     private $estudiante;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->estudiante = new Estudiante();
-        
     }
 
-    public function index(){
+    public function index()
+    {
         $data = $this->estudiante->index();
         require_once("public/views/estudiantes/index.php");
     }
@@ -36,9 +37,10 @@ class EstudianteController{
         header("Location: ".$_ENV['BASE_PATH']."/estudiante");
     }
 
-    public function delete(int $id){
+    public function delete(int $id)
+    {
         $this->estudiante->delete($id);
-        header("Location: ".$_ENV['BASE_PATH']."/estudiante");
+        header("Location: " . $_ENV['BASE_PATH'] . "/estudiante");
     }
 
     public function show($id){
@@ -47,5 +49,3 @@ class EstudianteController{
     }
 
 }
-
-?>

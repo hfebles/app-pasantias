@@ -25,7 +25,7 @@ if ((isset($_SESSION['nombre_usuario']) && $route === '/login') || (isset($_SESS
 if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
     $id = intval(substr($route, strlen('/mencion-show/')));
     // (new MencionPrincipalController())->show($id);
-}elseif ($request_method === 'GET' && strpos($route, '/mencion-delete/') === 0) {
+} elseif ($request_method === 'GET' && strpos($route, '/mencion-delete/') === 0) {
     $id = intval(substr($route, strlen('/mencion-delete/')));
     (new MencionController())->delete($id);
 } elseif ($request_method === 'GET' && strpos($route, '/mencion-des/') === 0) {
@@ -75,7 +75,8 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
 } elseif ($request_method === 'POST' && $route === '/tutor-store') {
     (new TutorController())->store($_REQUEST);
 } elseif ($request_method === 'POST' && $route === '/estudiante-store') {
-    (new EstudianteController())->store($_REQUEST, $_FILES);
+    $pdf = base64_encode(file_get_contents($_FILES['nombre_curriculum']['tmp_name']));
+    (new EstudianteController())->store($_REQUEST, $pdf);
 } elseif ($request_method === 'POST' && $route === '/empresa-store') {
     (new EmpresaController())->store($_REQUEST);
 } elseif ($request_method === 'POST' && $route === '/usuario-store') {
@@ -93,7 +94,7 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             require_once 'public/views/auth/login.php';
             break;
         case '/logout':
-             (new AuthController())->logout();
+            (new AuthController())->logout();
             break;
 
             // Rutas Home
@@ -106,17 +107,17 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             }
             break;
 
-        // Rutas de mencion
+            // Rutas de mencion
 
         case '/mencion':
             (new MencionController())->index();
             break;
-            
+
         case '/mencion-create':
             (new MencionController())->create();
             break;
 
-        //ruta de tutor
+            //ruta de tutor
 
         case '/tutor':
             (new TutorController())->index();
@@ -126,7 +127,7 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             (new TutorController())->create();
             break;
 
-        //rutas de estudiante
+            //rutas de estudiante
 
         case '/estudiante':
             (new EstudianteController())->index();
@@ -136,7 +137,7 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             (new EstudianteController())->create();
             break;
 
-        //rutas de empresa
+            //rutas de empresa
 
         case '/empresa':
             (new EmpresaController())->index();
@@ -146,13 +147,13 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             (new EmpresaController())->create();
             break;
 
-        //Ruta de auditoria
+            //Ruta de auditoria
 
         case '/auditoria':
             (new AuditoriaController())->index();
             break;
 
-        //rutas de usuario
+            //rutas de usuario
 
         case '/usuario':
             (new UsuariosController())->index();
@@ -162,7 +163,7 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             (new UsuariosController())->create();
             break;
 
-        //rutas de conocimientos
+            //rutas de conocimientos
 
         case '/conocimientos':
             (new ConocimientosController())->index();
@@ -172,7 +173,7 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             (new ConocimientosController())->create();
             break;
 
-        //rutas de habilidades
+            //rutas de habilidades
 
         case '/habilidades':
             (new HabilidadesController())->index();
@@ -188,5 +189,3 @@ if ($request_method === 'GET' && strpos($route, '/mencion-show/') === 0) {
             break;
     }
 }
-
-?>
